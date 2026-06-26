@@ -1,0 +1,177 @@
+/**
+ * Antigravity - Freelance HR & Organizational Development Consultant
+ * Animations, Hover Effects, and Transition Styles
+ */
+
+/* Micro-animations and transition styles */
+
+/* Hover state scale & lift */
+.hover-lift {
+  transition: var(--transition-smooth);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Accent drawing border lines */
+.hover-line-draw {
+  position: relative;
+}
+
+.hover-line-draw::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: var(--transition-smooth);
+}
+
+.hover-line-draw:hover::after {
+  width: 100%;
+}
+
+/* Image reveal scaling effect */
+.reveal-zoom-container {
+  overflow: hidden;
+}
+
+.reveal-zoom-img {
+  transition: var(--transition-slow);
+}
+
+.reveal-zoom-container:hover .reveal-zoom-img {
+  transform: scale(1.06);
+}
+
+/* Service Detail Timeline progress drawing path */
+.timeline-progress-wrapper {
+  position: relative;
+  padding: 40px 0;
+}
+
+.timeline-progress-line-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background-color: var(--border-color);
+  z-index: 1;
+}
+
+.timeline-progress-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to bottom, var(--accent-color), var(--highlight-color));
+  z-index: 2;
+  transition: height 0.1s ease-out;
+}
+
+/* Left / Right timeline steps */
+.timeline-step-item {
+  position: relative;
+  margin-bottom: 50px;
+  z-index: 3;
+}
+
+.timeline-step-dot {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--surface-color);
+  border: 4px solid var(--accent-color);
+  z-index: 4;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.timeline-step-item:hover .timeline-step-dot {
+  background-color: var(--accent-color);
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.timeline-step-card {
+  width: 45%;
+}
+
+.timeline-step-item.left-align .timeline-step-card {
+  margin-left: 0;
+  text-align: right;
+}
+
+.timeline-step-item.right-align .timeline-step-card {
+  margin-left: auto;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .timeline-progress-line-container {
+    left: 20px;
+    transform: none;
+  }
+  
+  .timeline-step-dot {
+    left: 20px;
+    transform: translate(-50%, -50%);
+  }
+
+  .timeline-step-item:hover .timeline-step-dot {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  
+  .timeline-step-card {
+    width: calc(100% - 50px);
+    margin-left: auto !important;
+    text-align: left !important;
+  }
+}
+
+/* Custom CSS entry animations (Fallback if GSAP fails) */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Button pulse ripple animation */
+@keyframes buttonPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+.pulse-btn {
+  animation: buttonPulse 2s infinite;
+}
+
+.pulse-btn:hover {
+  animation: none;
+}

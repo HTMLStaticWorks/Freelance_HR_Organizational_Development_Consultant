@@ -1,0 +1,236 @@
+/**
+ * Antigravity - Freelance HR & Organizational Development Consultant
+ * Dark Mode Variables & Component Overrides
+ */
+
+html.dark {
+  --primary-color: #E2E8F0;
+  /* Clean light slate */
+  --secondary-color: #CBD5E1;
+  --accent-color: #3B82F6;
+  /* Bright Professional Blue */
+  --highlight-color: #14B8A6;
+  /* Bright Growth Teal */
+  --background-color: #020617;
+  /* Executive Deep Navy */
+  --surface-color: #0B1120;
+  /* Slate Dark Surface */
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+
+  --glass-surface: rgba(11, 17, 32, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --border-color: #1E293B;
+
+  /* Overriding Shadows for Dark Theme */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Base Adjustments */
+html.dark body {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: var(--text-primary);
+}
+
+/* Gradient Text Adjustments */
+html.dark .text-gradient-teal {
+  background: linear-gradient(135deg, #FFF, var(--highlight-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.dark .text-gradient-blue {
+  background: linear-gradient(135deg, #FFF, var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sticky Header Scroll in Dark Mode */
+html.dark .header-scrolled {
+  background-color: rgba(11, 17, 32, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Nav Menu links */
+html.dark .nav-link {
+  color: var(--text-secondary);
+}
+
+html.dark .nav-link:hover,
+html.dark .nav-link.active {
+  color: #fff;
+}
+
+/* Dropdown Menu in Dark Mode */
+html.dark .dropdown-menu {
+  background-color: var(--surface-color);
+  border-color: var(--border-color);
+  box-shadow: var(--shadow-xl);
+}
+
+html.dark .dropdown-link:hover {
+  background-color: #1E293B;
+  color: #fff;
+}
+
+html.dark .dropdown-link.active {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #fff;
+}
+
+/* Buttons in Dark Mode */
+html.dark .btn-primary {
+  background-color: var(--text-primary);
+  color: var(--background-color);
+}
+
+html.dark .btn-primary:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+}
+
+html.dark .btn-secondary {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+html.dark .btn-secondary:hover {
+  background-color: var(--text-primary);
+  color: var(--background-color);
+}
+
+/* Service Card Links in Dark mode */
+html.dark .service-card-link {
+  color: var(--text-primary);
+}
+
+html.dark .service-card-link:hover {
+  color: var(--accent-color);
+}
+
+/* Hero Section Accents */
+html.dark .hero-section {
+  background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.07), transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(20, 184, 166, 0.05), transparent 50%);
+}
+
+/* Testimonial author adjust */
+html.dark .author-name {
+  color: var(--text-primary);
+}
+
+/* Accordion toggles */
+html.dark .custom-accordion-icon::before,
+html.dark .custom-accordion-icon::after {
+  background-color: var(--text-primary);
+}
+
+html.dark .custom-accordion-item.active .custom-accordion-icon::before,
+html.dark .custom-accordion-item.active .custom-accordion-icon::after {
+  background-color: var(--accent-color);
+}
+
+/* Forms In Dark Mode */
+html.dark .form-input-custom {
+  border-color: var(--border-color);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+html.dark .form-input-custom:focus {
+  border-color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+html.dark .form-check-label-custom:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Footer newsletter inputs */
+html.dark .newsletter-input {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark .newsletter-input:focus {
+  border-color: var(--accent-color);
+}
+
+/* Mobile Nav Drawer override */
+@media (max-width: 991px) {
+  html.dark .nav-menu-wrapper {
+    background-color: var(--surface-color);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  html.dark .burger-line {
+    background-color: var(--text-primary);
+  }
+}
+
+/* Footer dark mode overrides */
+html.dark .site-footer {
+  background-color: #020617;
+  /* Deep Navy */
+  color: #94A3B8;
+  border-top: 1px solid #1E293B;
+}
+
+html.dark .footer-logo {
+  color: #fff;
+}
+
+html.dark .footer-col-title {
+  color: #fff;
+}
+
+html.dark .social-link {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #CBD5E1;
+}
+
+html.dark .social-link:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+html.dark .footer-link {
+  color: #94A3B8;
+}
+
+html.dark .footer-link:hover {
+  color: #fff;
+}
+
+html.dark .newsletter-input {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+html.dark .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #64748B;
+}
+
+html.dark .footer-bottom-link {
+  color: #64748B;
+}
+
+html.dark .footer-bottom-link:hover {
+  color: #94A3B8;
+}
