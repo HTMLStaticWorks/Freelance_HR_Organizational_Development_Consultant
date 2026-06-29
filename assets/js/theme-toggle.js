@@ -21,7 +21,7 @@
 // Bind action buttons on DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
   // Dynamically wrap and clone controls for mobile responsiveness
-  const headerToggles = document.querySelectorAll('.site-header .theme-toggle');
+  const headerToggles = document.querySelectorAll('.site-header .theme-toggle, .site-header .nav-cta-btn');
   if (headerToggles.length > 0) {
     const parentContainer = headerToggles[0].parentElement;
     

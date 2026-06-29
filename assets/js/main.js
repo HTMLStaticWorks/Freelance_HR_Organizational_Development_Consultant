@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectInquiryWizard();
   initContactForm();
   initActiveNavigation();
+  initScrollToTop();
 });
 
 /**
@@ -333,4 +334,41 @@ function initActiveNavigation() {
       parent.appendChild(caret);
     }
   });
+}
+
+/**
+ * Dynamic Scroll-to-Top Button Generation & Logic
+ */
+function initScrollToTop() {
+  const btn = document.createElement('button');
+  btn.id = 'scroll-to-top';
+  btn.className = 'scroll-to-top-btn';
+  btn.setAttribute('aria-label', 'Scroll to Top');
+  
+  btn.innerHTML = `
+    <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round;">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  `;
+  
+  document.body.appendChild(btn);
+
+  const handleScroll = () => {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  };
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
 }
