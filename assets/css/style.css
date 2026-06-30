@@ -1633,7 +1633,6 @@ html[dir="rtl"] .progress-bar-fill {
   background-color: var(--surface-color) !important;
   border-bottom: 1px solid var(--border-color) !important;
   box-shadow: var(--shadow-sm) !important;
-  padding: 12px 0 !important;
 }
 
 /* Scroll to Top Button Styling */
