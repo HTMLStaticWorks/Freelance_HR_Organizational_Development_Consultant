@@ -105,25 +105,33 @@ function initTimelineProgress() {
       ease: 'none',
       scrollTrigger: {
         trigger: container,
-        start: 'top 60%',
-        end: 'bottom 60%',
+        start: 'top 75%',
+        end: 'bottom 75%',
         scrub: true
       }
     }
   );
 
-  // Stagger reveal timeline cards
+  // Stagger reveal timeline cards cleanly
   const steps = document.querySelectorAll('.timeline-step-item');
   steps.forEach(step => {
     gsap.from(step, {
       opacity: 0,
-      x: step.classList.contains('left-align') ? -50 : 50,
+      x: step.classList.contains('left-align') ? -40 : 40,
       duration: 0.8,
+      ease: 'power2.out',
       scrollTrigger: {
         trigger: step,
-        start: 'top 75%',
+        start: 'top 85%',
         toggleActions: 'play none none none'
       }
     });
   });
 }
+
+// Refresh ScrollTrigger positions after all page resources finish loading
+window.addEventListener('load', () => {
+  if (typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.refresh();
+  }
+});
